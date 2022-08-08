@@ -11,8 +11,9 @@ import json
 # URL for calls
 url_string = 'https://www.ncdc.noaa.gov/cdo-web/api/v2/locations/'
 
-json_list = []  # global list of json objects
+json_list = []  # buffer list of json objects
 spec_path = ''  # filepath for saving objects
+
 
 # get URL from input or from file
 def call_url(url_string: str):
@@ -25,6 +26,8 @@ def call_url(url_string: str):
 # store json files from specified url
 def load_page():
     # load HTML body into list of json objects
+    # "results" is the tag for the list of json files
+    # then is separated [ {},{}...]
     web_data = []  # list of json objects within body
 
 
